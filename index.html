@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CROCOIT TaskBoard</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="icon" href="./images/Group_30.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="app">
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="user-info-sidebar">
+                    <img id="sidebarAvatar" src="default-avatar.png" alt="Avatar">
+                    <div>
+                        <h3 id="sidebarName">Your Name</h3>
+                        <a href="profile.html" target="_blank" class="profile-link">View profile</a>
+                    </div>
+                </div>
+                <button id="addProjectBtn" class="add-project-btn">
+                    <span>Add project</span>
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+            <h4>My Projects</h4>
+            <ul id="projectsList"></ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="project-header">
+                <div class="project-title-wrapper">
+                    <img id="projectLogo" src="" alt="Logo" class="project-logo">
+                    <h1 id="currentProjectName">Select a project</h1>
+                </div>
+                <button id="addTaskBtn" class="add-task-btn">
+                    <i class="fas fa-plus"></i> Add Task
+                </button>
+            </header>
+
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="taskSearch" placeholder="Search tasks...">
+            </div>
+
+            <div id="tasksContainer"></div>
+        </main>
+    </div>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2 id="projectModalTitle">Add New Project</h2>
+            <form id="projectForm">
+                <input type="hidden" id="editProjectId">
+                <label>Project Name:</label>
+                <input type="text" id="projectName" required>
+                <label>Project Color:</label>
+                <input type="color" id="projectColor" value="#007acc">
+                <label>Project Logo:</label>
+                <input type="file" id="projectLogoInput" accept="image/*">
+                <div id="logoPreview" class="logo-preview"></div>
+                <div class="modal-buttons">
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button type="submit" id="projectSubmitBtn">Create Project</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Task Modal -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Task in <span id="taskProjectName"></span></h2>
+            <form id="taskForm">
+                <input type="hidden" id="editTaskIndex" value="-1">
+                <label>Task Title:</label>
+                <input type="text" id="taskTitle" required>
+                <label>Git Commits:</label>
+                <textarea id="gitCommits" rows="4"></textarea>
+                <label>ERP:</label>
+                <input type="url" id="erpLink">
+                <label>Description:</label>
+                <textarea id="taskDescription" rows="5"></textarea>
+                <label>Screenshots (multiple)</label>
+                <input type="file" id="taskImages" accept="image/*" multiple>
+                <div id="imagesPreview" class="images-preview"></div>
+                <div class="modal-buttons">
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button type="submit">Save Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

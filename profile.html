@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="icon" href="./images/Group_30.png" type="image/x-icon">
+</head>
+
+<body class="profile-body">
+
+    <a href="index.html" class="back-btn-fixed">
+        <i class="fas fa-arrow-left"></i> Back to Tasks
+    </a>
+
+    <div class="profile-container">
+        <div class="profile-card">
+            <div class="avatar-section">
+                <img id="profileAvatar" src="default-avatar.png" alt="Profile Photo">
+                <label for="avatarInput" class="camera-btn">
+                    <i class="fas fa-camera"></i>
+                </label>
+                <input type="file" id="avatarInput" accept="image/*">
+            </div>
+
+            <h2 id="profileNameDisplay">Your Name</h2>
+
+            <form id="profileForm">
+                <div class="input-wrapper">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="userName" placeholder="Full Name" required>
+                </div>
+                <div class="input-wrapper">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="userEmail" placeholder="Email Address" required>
+                </div>
+                <div class="input-wrapper">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" id="userPhone" placeholder="Phone Number">
+                </div>
+                <button type="submit" class="save-profile-btn">
+                    <i class="fas fa-save"></i> Save Profile
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/profile.js"></script>
+</body>
+
+</html>
